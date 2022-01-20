@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "k8s" {
+resource "azurerm_resource_group" "example" {
     name     = var.resource_group_name
     location = var.location
 }
