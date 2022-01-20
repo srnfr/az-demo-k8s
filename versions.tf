@@ -23,7 +23,3 @@ provider "azurerm" {
 
   
 }
-resource "azurerm_resource_group" "rg" {
-  name = "training-demo-srn"
-  location = "westeurope-1"
-}
