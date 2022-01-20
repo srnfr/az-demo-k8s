@@ -9,7 +9,6 @@ terraform {
 
 variable "client_id" {}
 variable "client_secret" {}
-variable "client_id" {}
 variable "sub_id" {}
 variable "tenant_id" {}
 
