@@ -3,11 +3,6 @@ resource "azurerm_resource_group" "example" {
     location = var.location
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "${var.prefix}-k8s-resources"
-  location = var.location
-}
-
 resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
   location            = azurerm_resource_group.example.location
