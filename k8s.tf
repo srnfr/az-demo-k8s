@@ -24,8 +24,8 @@ resource "azurerm_subnet" "internal" {
 
 resource "azurerm_kubernetes_cluster" "example" {
     name                = var.cluster_name
-    location            = azurerm_resource_group.k8s.location
-    resource_group_name = azurerm_resource_group.k8s.name
+    location            = azurerm_resource_group.example.location
+    resource_group_name = azurerm_resource_group.example.name
     dns_prefix          = var.dns_prefix
 
 
