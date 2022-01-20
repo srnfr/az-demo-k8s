@@ -2,6 +2,10 @@ variable "agent_count" {
     default = 2
 }
 
+variable "prefix" {
+    default = "k8stest"
+}
+
 variable "dns_prefix" {
     default = "k8stest"
 }
