@@ -1,6 +1,6 @@
-#variable "location" {
-#  type        = string
-#}
+variable "location" {
+  type        = string
+}
 
 variable "resource_group_name" {
   type        = string
@@ -28,7 +28,7 @@ variable "node_size" {
 resource "azurerm_resource_group" "example" {
   ##already exists and managed externally
   name     = "${var.resource_group_name}"
-  ## location = var.location
+  location = "${var.location}"
 }
 
 resource "azurerm_virtual_network" "example" {
