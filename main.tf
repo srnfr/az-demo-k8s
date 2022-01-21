@@ -22,15 +22,6 @@ variable "node_size" {
   type        = string
 }
 
-#####
-
-
-data "azurerm_resource_group" "example" {
-  ## DATA block because already exists and managed externally
-  name     = "${var.resource_group_name}"
-  ##location = "${var.location}"
-}
-
 resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
   location            = azurerm_resource_group.example.location
