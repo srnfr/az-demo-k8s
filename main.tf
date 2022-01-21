@@ -48,6 +48,7 @@ resource "azurerm_kubernetes_cluster" "example" {
         node_count      = var.node_count
         vm_size         = var.node_size
         vnet_subnet_id = azurerm_subnet.internal.id
+        enable_node_public_ip = true
     }
 
    identity {
