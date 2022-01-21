@@ -43,13 +43,13 @@ resource "azurerm_kubernetes_cluster" "example" {
     name                = var.cluster_name
     location            = azurerm_resource_group.example.location
     resource_group_name = azurerm_resource_group.example.name
-    dns_prefix          = var.dns_prefix
+    dns_prefix          = var.prefix
 
 
     default_node_pool {
         name            = "agentpool"
         node_count      = var.agent_count
-        vm_size         = "Standard_D2_v2"
+        vm_size         = var.node_size
         vnet_subnet_id = azurerm_subnet.internal.id
     }
 
