@@ -18,6 +18,10 @@ variable "agent_count" {
   type        = string
 }
 
+variable "node_size" {
+  type        = string
+}
+
 #####
 
 resource "azurerm_resource_group" "example" {
