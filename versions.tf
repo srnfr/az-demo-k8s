@@ -7,6 +7,11 @@ terraform {
   }
 }
 
+
+## az login  
+## az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/XXXX"
+##
+
 variable "client_id" {}
 variable "client_secret" {}
 variable "sub_id" {}
