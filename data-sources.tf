@@ -5,6 +5,6 @@ data "azurerm_resource_group" "example" {
 }
 
 data "azurerm_ssh_public_key" "example" {
-  name                = "srn"
-  resource_group_name = "training-demo-srn"
+  name                = "${var.ssh_key_name}"
+  resource_group_name = "${var.resource_group_name}"
 }
