@@ -24,9 +24,11 @@ variable "node_size" {
 
 #####
 
+
 resource "azurerm_resource_group" "example" {
-    name     = var.resource_group_name
-    location = var.location
+  ##already exists and managed externally
+  name     = "${var.resource_group_name}"
+  ## location = var.location
 }
 
 resource "azurerm_virtual_network" "example" {
