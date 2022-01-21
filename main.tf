@@ -57,6 +57,9 @@ resource "azurerm_kubernetes_cluster" "example" {
         vnet_subnet_id = azurerm_subnet.internal.id
     }
 
+   identity {
+    type = "SystemAssigned"
+   }
 
     network_profile {
         load_balancer_sku = "Standard"
