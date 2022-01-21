@@ -26,14 +26,14 @@ resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
   location            = data.azurerm_resource_group.example.location
   resource_group_name = data.azurerm_resource_group.example.name
-  address_space       = ["10.1.0.0/16"]
+  address_space       = ["10.244.0.0/16"]
 }
 
 resource "azurerm_subnet" "internal" {
   name                 = "internal"
   virtual_network_name = azurerm_virtual_network.example.name
   resource_group_name  = data.azurerm_resource_group.example.name
-  address_prefixes     = ["10.1.0.0/22"]
+  address_prefixes     = ["10.244.1.0/24"]
 }
 
 resource "azurerm_kubernetes_cluster" "example" {
