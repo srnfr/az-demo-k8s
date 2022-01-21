@@ -14,7 +14,7 @@ variable "cluster_name" {
   type        = string
 }
 
-variable "agent_count" {
+variable "node_count" {
   type        = string
 }
 
@@ -51,8 +51,8 @@ resource "azurerm_kubernetes_cluster" "example" {
 
 
     default_node_pool {
-        name            = "agentpool"
-        node_count      = var.agent_count
+        name            = "defaultpool"
+        node_count      = var.node_count
         vm_size         = var.node_size
         vnet_subnet_id = azurerm_subnet.internal.id
     }
