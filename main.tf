@@ -24,22 +24,22 @@ variable "node_size" {
 
 resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  location            = data.azurerm_resource_group.example.location
+  resource_group_name = data.azurerm_resource_group.example.name
   address_space       = ["10.1.0.0/16"]
 }
 
 resource "azurerm_subnet" "internal" {
   name                 = "internal"
   virtual_network_name = azurerm_virtual_network.example.name
-  resource_group_name  = azurerm_resource_group.example.name
+  resource_group_name  = data.azurerm_resource_group.example.name
   address_prefixes     = ["10.1.0.0/22"]
 }
 
 resource "azurerm_kubernetes_cluster" "example" {
     name                = var.cluster_name
-    location            = azurerm_resource_group.example.location
-    resource_group_name = azurerm_resource_group.example.name
+    location            = data.azurerm_resource_group.example.location
+    resource_group_name = data.azurerm_resource_group.example.name
     dns_prefix          = var.prefix
 
 
