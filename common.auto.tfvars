@@ -1,23 +1,6 @@
-variable "agent_count" {
-    default = 2
-}
-
-variable "prefix" {
-    default = "k8stest"
-}
-
-variable "dns_prefix" {
-    default = "k8stest"
-}
-
-variable cluster_name {
-    default = "k8stest"
-}
-
-variable resource_group_name {
-    default = "azure-k8stest"
-}
-
-variable location {
-    default = "West Europe"
-}
+agent_count = 2
+prefix = "k8stest"
+dns_prefix = "k8stest"
+cluster_name = "k8stest"
+resource_group_name = "azure-k8stest"
+location = "West Europe"
