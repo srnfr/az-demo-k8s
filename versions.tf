@@ -17,6 +17,8 @@ variable "client_secret" {}
 variable "sub_id" {}
 variable "tenant_id" {}
 
+variable "ssh_key_name" {}
+
 provider "azurerm" {
   features {}
   
