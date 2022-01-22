@@ -16,6 +16,7 @@ variable "client_id" {}
 variable "client_secret" {}
 variable "sub_id" {}
 variable "tenant_id" {}
+variable "username" {}
 
 variable "ssh_key_name" {}
 
