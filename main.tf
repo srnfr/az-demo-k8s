@@ -45,7 +45,7 @@ resource "azurerm_kubernetes_cluster" "example" {
     dns_prefix          = var.prefix
 
     linux_profile {
-      admin_username = "var.username"
+      admin_username = var.username
       ssh_key {
         key_data = data.azurerm_ssh_public_key.example.public_key
       }
