@@ -22,8 +22,6 @@ variable "node_size" {
   type        = string
 }
 
-variable "username" {}
-
 resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
   location            = data.azurerm_resource_group.example.location
