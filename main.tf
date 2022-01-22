@@ -68,7 +68,7 @@ resource "azurerm_kubernetes_cluster" "example" {
     network_profile {
         load_balancer_sku = "Standard"
         ##network_plugin = "azure"
-        network_plugin = "kubelet"
+        network_plugin = "kubenet"
         network_policy = "calico"
         pod_cidr = "10.244.0.0/23"
         service_cidr = "100.245.0.0/24"
