@@ -22,6 +22,8 @@ variable "node_size" {
   type        = string
 }
 
+variable "username" {}
+
 resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
   location            = data.azurerm_resource_group.example.location
@@ -43,7 +45,7 @@ resource "azurerm_kubernetes_cluster" "example" {
     dns_prefix          = var.prefix
 
     linux_profile {
-      admin_username = "ubuntu"
+      admin_username = "var.username"
       ssh_key {
         key_data = data.azurerm_ssh_public_key.example.public_key
       }
@@ -65,7 +67,8 @@ resource "azurerm_kubernetes_cluster" "example" {
 
     network_profile {
         load_balancer_sku = "Standard"
-        network_plugin = "azure"
+        ##network_plugin = "azure"
+        network_plugin = "kubelet"
         network_policy = "calico"
         pod_cidr = "10.244.0.0/23"
         service_cidr = "100.245.0.0/24"
