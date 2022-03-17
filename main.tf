@@ -41,6 +41,8 @@ resource "azurerm_kubernetes_cluster" "example" {
     location            = data.azurerm_resource_group.example.location
     resource_group_name = data.azurerm_resource_group.example.name
     dns_prefix          = var.prefix
+    ## Mandotory for NodePort
+    enable_node_public_ip = "true" 
 
     linux_profile {
       admin_username = var.username
