@@ -93,7 +93,7 @@ resource "azurerm_kubernetes_cluster" "example" {
     destination_port_range      = "30000-32000"
     source_address_prefix       = "*"
     destination_address_prefix  = "*"
-    resource_group_name         = data.azurerm_resource_group.example.name
+    resource_group_name         = "${var.rg_nsg}"
     network_security_group_name = data.azurerm_resources.example.resources.0.name
   }
 
