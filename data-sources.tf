@@ -13,3 +13,7 @@ data "azurerm_resources" "example" {
   resource_group_name = "${var.resource_group_name}"
   type = "Microsoft.Network/networkSecurityGroups"
 }
+
+output name_nsg {
+    value = data.azurerm_resources.example.resources.0.name
+}
