@@ -76,7 +76,7 @@ resource "azurerm_kubernetes_cluster" "example" {
         ##dns_service_ip = "10.245.0.250"
         ##docker_bridge_cidr = "172.17.2.1/24"
     }
-  
+} 
   ## Network Security Group for NodePort
 
   resource "azurerm_network_security_rule" "example" {
@@ -92,4 +92,3 @@ resource "azurerm_kubernetes_cluster" "example" {
     resource_group_name         = data.azurerm_resource_group.example.name
     network_security_group_name = data.azurerm_resources.example.resources.0.name
   }
-}
