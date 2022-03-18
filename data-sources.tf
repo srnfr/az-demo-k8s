@@ -10,6 +10,6 @@ data "azurerm_ssh_public_key" "example" {
 }
 
 data "azurerm_resources" "example" {
-  resource_group_name = data.azurerm_resource_group.example.name
+  resource_group_name = "${var.resource_group_name}"
   type = "Microsoft.Network/networkSecurityGroups"
 }
