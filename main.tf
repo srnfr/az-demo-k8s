@@ -41,8 +41,6 @@ resource "azurerm_kubernetes_cluster" "example" {
     location            = data.azurerm_resource_group.example.location
     resource_group_name = data.azurerm_resource_group.example.name
     dns_prefix          = var.prefix
-    ## Mandotory for NodePort
-    enable_node_public_ip = "true" 
 
     linux_profile {
       admin_username = var.username
@@ -78,4 +76,29 @@ resource "azurerm_kubernetes_cluster" "example" {
         ##dns_service_ip = "10.245.0.250"
         ##docker_bridge_cidr = "172.17.2.1/24"
     }
+  
+  ## Network Security Group for NodePort
+  
+  data "azurerm_resources" "example" {
+    resource_group_name = data.azurerm_resource_group.example.name
+    type = "Microsoft.Network/networkSecurityGroups"
+  }
+
+  output name_nsg {
+    value = data.azurerm_resources.example.resources.0.name
+  }
+
+  resource "azurerm_network_security_rule" "example" {
+    name                        = "NodePort"
+    priority                    = 100
+    direction                   = "Inbound"
+    access                      = "Allow"
+    protocol                    = "Tcp"
+    source_port_range           = "*"
+    destination_port_range      = "30000-32000"
+    source_address_prefix       = "*"
+    destination_address_prefix  = "*"
+    resource_group_name         = data.azurerm_resource_group.example.name
+    network_security_group_name = data.azurerm_resources.example.resources.0.name
+  }
 }
