@@ -78,15 +78,6 @@ resource "azurerm_kubernetes_cluster" "example" {
     }
   
   ## Network Security Group for NodePort
-  
-  data "azurerm_resources" "example" {
-    resource_group_name = data.azurerm_resource_group.example.name
-    type = "Microsoft.Network/networkSecurityGroups"
-  }
-
-  output name_nsg {
-    value = data.azurerm_resources.example.resources.0.name
-  }
 
   resource "azurerm_network_security_rule" "example" {
     name                        = "NodePort"
