@@ -79,7 +79,7 @@ resource "azurerm_kubernetes_cluster" "example" {
 } 
   ## Network Security Group for NodePort
 
-  resource "azurerm_network_security_rule" "example" {
+  resource "azurerm_network_security_rule" "NodePort" {
     name                        = "NodePort"
     priority                    = 100
     direction                   = "Inbound"
@@ -87,6 +87,20 @@ resource "azurerm_kubernetes_cluster" "example" {
     protocol                    = "Tcp"
     source_port_range           = "*"
     destination_port_range      = "30000-32000"
+    source_address_prefix       = "*"
+    destination_address_prefix  = "*"
+    resource_group_name         = data.azurerm_resource_group.example.name
+    network_security_group_name = data.azurerm_resources.example.resources.0.name
+  }
+
+  resource "azurerm_network_security_rule" "SSH" {
+    name                        = "SSH"
+    priority                    = 110
+    direction                   = "Inbound"
+    access                      = "Allow"
+    protocol                    = "Tcp"
+    source_port_range           = "*"
+    destination_port_range      = "22"
     source_address_prefix       = "*"
     destination_address_prefix  = "*"
     resource_group_name         = data.azurerm_resource_group.example.name
