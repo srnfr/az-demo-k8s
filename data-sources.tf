@@ -10,7 +10,7 @@ data "azurerm_ssh_public_key" "example" {
 }
 
 data "azurerm_resources" "example" {
-  resource_group_name = "{var.rg_nsg}"
+  resource_group_name = "${var.rg_nsg}"
   type = "Microsoft.Network/networkSecurityGroups"
 }
 
