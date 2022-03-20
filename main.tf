@@ -81,5 +81,4 @@ resource "azurerm_kubernetes_cluster" "example" {
         ##docker_bridge_cidr = "172.17.2.1/24"
     }
 } 
- 
-  }
+
