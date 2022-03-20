@@ -14,6 +14,6 @@ data "azurerm_resources" "example" {
   type = "Microsoft.Network/networkSecurityGroups"
 }
 
-output name_nsg {
-    value = data.azurerm_resources.example.resources.0.name
-}
+#output name_nsg {
+#    value = data.azurerm_resources.example.resources.0.name
+#}
