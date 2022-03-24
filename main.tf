@@ -55,10 +55,10 @@ resource "azurerm_kubernetes_cluster" "example" {
   
     default_node_pool {
         name            = "defaultpool"
+        enable_auto_scaling = true
         node_count      = var.node_count
         vm_size         = var.node_size
         enable_node_public_ip = true
-        enable_auto_scaling = true
         min_count = 1
         max_count = 2
         ##vnet_subnet_id = azurerm_subnet.internal.id
