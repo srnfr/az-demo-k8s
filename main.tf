@@ -59,8 +59,8 @@ resource "azurerm_kubernetes_cluster" "example" {
         node_count      = var.node_count
         vm_size         = var.node_size
         enable_node_public_ip = true
-        min_count = 1
-        max_count = 2
+        min_count = 2
+        max_count = 4
         ##vnet_subnet_id = azurerm_subnet.internal.id
         ##pod_subnet_id = azurerm_subnet.internal.id
         
