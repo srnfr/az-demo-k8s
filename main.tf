@@ -74,7 +74,7 @@ resource "azurerm_kubernetes_cluster" "example" {
         load_balancer_sku = "Standard"
         ##-----
         network_plugin = "azure"
-        ##network_policy = "calico"
+        network_policy = "calico"
         ##-----
         ##network_plugin = "kubenet"
         ## see https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
