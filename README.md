@@ -6,4 +6,4 @@ Network mode : Transparent.
 
 Public IP assigned to Nodes.
 
-NB : Security Group Network modified to support NodePort and SSH admin access (with RSA key)
+NB : Security Group Network to be modified to support NodePort
