@@ -9,6 +9,8 @@ terraform {
 
 
 ## az login  
+## az account tenant list
+## az account subscription list
 ## az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/XXXX"
 ##
 
