@@ -17,7 +17,12 @@ variable "client_id" {}
 variable "client_secret" {}
 variable "sub_id" {}
 variable "tenant_id" {}
+variable "resource_group_name" {
+  type        = string
+}
 ##
+
+
 
 variable "username" {}
 variable "ssh_key_name" {}
