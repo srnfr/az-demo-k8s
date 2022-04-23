@@ -13,13 +13,13 @@ terraform {
 ## az account subscription list
 ## az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/XXXX"
 ##
-
 variable "client_id" {}
 variable "client_secret" {}
 variable "sub_id" {}
 variable "tenant_id" {}
-variable "username" {}
+##
 
+variable "username" {}
 variable "ssh_key_name" {}
 
 provider "azurerm" {
