@@ -17,9 +17,7 @@ variable "client_id" {}
 variable "client_secret" {}
 variable "sub_id" {}
 variable "tenant_id" {}
-variable "resource_group_name" {
-  type        = string
-}
+variable "resource_group_name" {}
 ##
 
 
@@ -34,6 +32,6 @@ provider "azurerm" {
   client_id       =  var.client_id
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
+  resource_group_name = var.resource_group_name
 
-  
 }
