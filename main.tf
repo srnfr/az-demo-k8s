@@ -20,7 +20,7 @@ variable "node_size" {
   type        = string
 }
 
-resource "azurerm_virtual_network" "example" {
+resource "azurerm_virtual_network" "supernet" {
   name                = "${var.prefix}-network"
   location            = data.azurerm_resource_group.example.location
   resource_group_name = data.azurerm_resource_group.example.name
@@ -29,7 +29,7 @@ resource "azurerm_virtual_network" "example" {
 
 resource "azurerm_subnet" "internal" {
   name                 = "internal"
-  virtual_network_name = azurerm_virtual_network.example.name
+  virtual_network_name = azurerm_virtual_network.supernet.name
   resource_group_name  = data.azurerm_resource_group.example.name
   address_prefixes     = ["10.240.1.0/24"]
 }
