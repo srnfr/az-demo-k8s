@@ -67,8 +67,8 @@ resource "azurerm_kubernetes_cluster" "example" {
     network_profile {
         load_balancer_sku = "Standard"
         ##-----
-        network_plugin = "none"
-        ###network_plugin = "azure"
+        ## No explicit means NONE (BYOCNI)
+        ##network_plugin = "azure"
         ###network_policy = "calico"
         ##-----
         ##network_plugin = "kubenet"
