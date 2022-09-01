@@ -65,11 +65,10 @@ resource "azurerm_kubernetes_cluster" "example" {
    }
 
 ## Commenting the whole paragraph for BYOCNI
-  network_profile {
+  ##network_profile {
   ##      load_balancer_sku = "Standard"
         ##-----
         ## No explicit means NONE (BYOCNI)
-        network_plugin = "none"
         ##network_plugin = "azure"
         ###network_policy = "calico"
         ##-----
@@ -79,5 +78,5 @@ resource "azurerm_kubernetes_cluster" "example" {
         ##service_cidr = "10.245.0.0/24"
         dns_service_ip = "10.0.0.10"
         ##docker_bridge_cidr = "172.17.2.1/24"
-    }
+    ##}
 } 
