@@ -76,7 +76,7 @@ resource "azurerm_kubernetes_cluster" "example" {
         ## see https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
         ##pod_cidr = "10.244.0.0/22"
         ##service_cidr = "10.245.0.0/24"
-        dns_service_ip = "10.0.0.10"
+        ##dns_service_ip = "10.0.0.10"
         ##docker_bridge_cidr = "172.17.2.1/24"
     ##}
 } 
